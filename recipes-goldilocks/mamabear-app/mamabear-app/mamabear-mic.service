@@ -1,0 +1,13 @@
+[Unit]
+Description=Start the mic level measuring on Mama bear
+After=mosquitto.service
+Requires=mosquitto.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/mamabear/bin/mic-publisher.sh
+Restart=always
+
+[Install]
+WantedBy=graphical.target

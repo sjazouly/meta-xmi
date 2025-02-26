@@ -1,0 +1,27 @@
+From 54cdcaf882a7ac7958d9cc52b509c37f00cc869e Mon Sep 17 00:00:00 2001
+From: Don Gunn <dongunn@hotmail.com>
+Date: Tue, 4 Jun 2024 13:00:04 -0700
+Subject: [PATCH] update uname value to work with fdc-mamabear board name.
+
+AI demos were not running because the board name does not contain
+the string 'MX8MP'
+---
+ common/common_utils.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common/common_utils.sh b/common/common_utils.sh
+index 54d9c1f..8c37aa6 100644
+--- a/common/common_utils.sh
++++ b/common/common_utils.sh
+@@ -14,7 +14,7 @@ function error {
+ function setup_env {
+   # detect i.MX in use
+   local UNAME=$(uname -a)
+-  if [[ "${UNAME}" =~ "imx8mp" ]]; then
++  if [[ "${UNAME}" =~ "fdc" ]]; then
+     IMX="IMX8MP"
+     # Store on disk .nb files that contains the result of the OpenVX graph compilation
+     # This feature is only available for iMX8MPlus to get the warmup time only once
+-- 
+2.34.1
+

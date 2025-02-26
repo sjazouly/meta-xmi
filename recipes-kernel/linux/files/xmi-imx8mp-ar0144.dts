@@ -1,0 +1,70 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * Copyright 2019-2024 Future Electronics
+*/
+
+/dts-v1/;
+
+
+#include "xmi-imx8mp.dts"
+
+
+
+// &i2c3 {
+// 	/delete-node/ar0830_mipi@36;
+
+// 	ar0144_0: ar0144_mipi@10 {
+// 		compatible = "onsemi,ar0144";
+// 		reg = <0x10>;
+// 		csi_id = <0>;
+// 		reset-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+// //		isp_en-gpios  = <&adp5585gpio_isp 2 GPIO_ACTIVE_HIGH>;
+// //		DVDD-supply   = <&reg_dvdd_1v2>;
+// //		VDDIO-supply  = <&reg_vddio_1v8>;
+// //		AVDD-supply   = <&reg_avdd_2v8>;
+// 		status = "okay";
+
+// 		port {
+// 			ar0144_mipi_0_ep: endpoint {
+// 				data-lanes = <1 2>;
+// 				clock-lanes = <0>;
+// 				remote-endpoint = <&mipi_csi0_ep>;
+// 			};
+// 		};
+// 	};
+// };
+
+// &cameradev {
+// 	status = "okay";
+// };
+
+// &isi_0 {
+// 	status = "disabled";
+// };
+
+// &isp_0 {
+// 	status = "okay";
+// };
+
+// &dewarp {
+// 	status = "okay";
+// };
+
+// &mipi_csi_0 {
+// 	status = "okay";
+// 	//clock-frequency = <266000000>;
+// 	//assigned-clock-parents = <&clk IMX8MP_SYS_PLL1_266M>;
+// 	//assigned-clock-rates = <266000000>;
+
+// 	port {
+// 		endpoint {
+// 			remote-endpoint = <&ar0144_mipi_0_ep>;
+// 			data-lanes = <2>;
+// 			csis-hs-settle = <9>;
+// 		};
+// 	};
+// };
+
+// &mipi_csi_1 {
+// 	status = "disabled";
+// };

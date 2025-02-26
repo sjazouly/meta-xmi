@@ -1,0 +1,14 @@
+[Unit]
+Description=Start the UWB ranging on Mama bear
+After=mosquitto.service
+Requires=mosquitto.service
+
+[Service]
+Type=simple
+User=root
+ExecStartPre=-/etc/sdc/uwblib_init.sh
+ExecStart=/opt/mamabear/bin/uwb-publisher.sh
+Restart=always
+
+[Install]
+WantedBy=graphical.target

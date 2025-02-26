@@ -1,0 +1,15 @@
+[Unit]
+Description=Start the BLE connection to Baby Bear
+After=mosquitto.service
+Requires=mosquitto.service
+
+[Service]
+Type=simple
+User=root
+EnvironmentFile=/etc/mamabear-ble.conf
+ExecStartPre=/opt/mamabear/bin/bt-setup.sh
+ExecStart=/opt/mamabear/bin/ble-publisher.sh
+Restart=always
+
+[Install]
+WantedBy=graphical.target

@@ -1,2 +1,2 @@
-# meta-xmi
-meta layer for xmi
+# meta-goldilocks
+Meta layer providing support for the Future Goldilocks platform

@@ -1,0 +1,17 @@
+[Unit]
+Description=Start the MamaBear UI
+After=mosquitto.service weston.service
+Requires=mosquitto.service weston.service
+
+[Service]
+Type=simple
+User=root
+Environment=\
+        'XDG_RUNTIME_DIR=/run/user/0' \
+        'WAYLAND_DISPLAY=wayland-1' \
+        'DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/0/bus'
+ExecStart=/opt/mamabear/app/appMamabear
+Restart=always
+
+[Install]
+WantedBy=graphical.target

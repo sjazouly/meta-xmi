@@ -1,0 +1,29 @@
+From 9c82c32f838c8feabc83f07464fbb8adc1fbae17 Mon Sep 17 00:00:00 2001
+From: Don Gunn <dongunn@hotmail.com>
+Date: Fri, 24 May 2024 09:08:34 -0700
+Subject: [PATCH] change default machine from 7ULP to 8MPlus so that the proper
+ demos load on mamabear board.
+
+---
+ engine/DemoPage.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/engine/DemoPage.cpp b/engine/DemoPage.cpp
+index 215c3d7..d423c7a 100644
+--- a/engine/DemoPage.cpp
++++ b/engine/DemoPage.cpp
+@@ -118,9 +118,9 @@ void DemoPage::loadJsonData()
+     QJsonValue jv, jv1, jv2, jv3, jv4;
+     QJsonObject jo, jo1, jo2;
+     QString board = QHostInfo::localHostName().toLocal8Bit();
+-    // If Demo Launcher is not running on i.MX board, set it to 7ulp
++    // If Demo Launcher is not running on i.MX board, set it to 8MPlus
+     if (!board.contains("imx"))
+-        board = "imx7ulpevk";
++        board = "imx8mpevk";
+     if (board.contains("-"))
+         board = board.split("-")[0];
+     else if (board.endsWith("evk"))
+-- 
+2.34.1
+
